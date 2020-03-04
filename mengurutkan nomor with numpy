@@ -1,0 +1,84 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar  3 21:39:56 2020
+
+@author: Administrator
+"""
+
+import numpy as np
+
+my_list = [0, 1, 2, 3, 4]
+
+arr = np.array(my_list)
+# mengubah list menjadi array 
+# array([0, 1, 2, 3, 4])
+
+np.arange(0, 10)
+# array mulai dari 0 sampai 9
+# array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+np.arange(0, 10, 2)
+#array mulai dari 0 - 9 dengan step 2
+# array([0, 2, 4, 6, 8])
+
+np.random.randint(0, 10)
+# 7 (berbeda setiap dipanggil, angka random antara 0 s/d 9)
+
+np.random.randint(0,10,(3,3))
+# array 3 x 3 dengan isi random interger dari 0 - 9
+#array([[9, 7, 8],
+#       [0, 3, 5],
+#       [2, 6, 7]])
+
+arr = np.random.randint(0, 100, 10)
+# array([95, 11, 81, 70, 63, 87, 75,  9, 77, 40])
+# array dengan isi random integer sebanyak 10
+
+arr.max()
+# return max value dari variable arr
+# 95
+
+arr.min()
+#return min value dari variable arr
+# 9
+
+arr.mean()
+# return mean atau rata-rata dari variable arr
+# 60.799999999999997
+
+arr.reshape(2,5)
+# reshape array (row, column), harus memuat 10 item dari variable arr (variable arr memiliki 10 item)
+#array([[95, 11, 81, 70, 63],
+#       [87, 75,  9, 77, 40]])
+
+mat = np.arange(0,100).reshape(10,10)
+#array([[ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9],
+#       [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+#       [20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
+#       [30, 31, 32, 33, 34, 35, 36, 37, 38, 39],
+#       [40, 41, 42, 43, 44, 45, 46, 47, 48, 49],
+#       [50, 51, 52, 53, 54, 55, 56, 57, 58, 59],
+#       [60, 61, 62, 63, 64, 65, 66, 67, 68, 69],
+#       [70, 71, 72, 73, 74, 75, 76, 77, 78, 79],
+#       [80, 81, 82, 83, 84, 85, 86, 87, 88, 89],
+#       [90, 91, 92, 93, 94, 95, 96, 97, 98, 99]])
+
+mat[0, 9]
+# indeks array adalah [row, col] dengan zero based indexing
+# 9
+
+mat[:, 1]
+# slicing, semua item dari kolom ke 1
+# array([ 1, 11, 21, 31, 41, 51, 61, 71, 81, 91])
+
+mat[0, :]
+# slicing, semua item dari row ke 0
+# array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+mat[0:3, 0:3]
+#slicing, semua item dari row 0 s/d 2 dan col 0 s/d 2
+#array([[ 0,  1,  2],
+#       [10, 11, 12],
+#       [20, 21, 22]])
+
+print(mat[mat>50])
